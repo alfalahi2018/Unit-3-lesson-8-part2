@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unit 3 · Lesson 8, part 1 · An email: school trip to Bahla</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#3B2A1A;--sand:#F6D8A8;--terra:#C8553D;--teal:#0F8A8F;--gold:#E9A400;--paper:#FFFBF2}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:'Baloo 2',system-ui,sans-serif;color:var(--ink);padding:14px;background:linear-gradient(180deg,#FFE9B8 0%,#FFD28A 55%,#F4B466 100%) fixed;overflow-x:hidden}
+.sunb{position:fixed;top:20px;right:6%;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,#FFF6C8 35%,#FFC93C 62%,#FFC93C00 72%);z-index:0}
+.dunes{position:fixed;left:0;right:0;bottom:0;height:230px;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+button{font-family:inherit;cursor:pointer}button:focus-visible{outline:4px solid var(--ink);outline-offset:2px}
+.top{background:var(--paper);border:4px solid var(--ink);border-radius:18px;padding:12px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;box-shadow:0 6px 0 #3B2A1A55;border-top:18px solid var(--terra)}
+.top .tt{display:flex;gap:14px;align-items:center}
+.top small{color:var(--terra);font-weight:800;letter-spacing:2px}.top h1{margin:0;font-size:clamp(24px,4vw,36px);font-weight:800}
+.badge{background:var(--gold);border:3px solid var(--ink);border-radius:999px;padding:2px 16px;font-weight:800;font-size:20px;display:inline-flex;gap:8px;align-items:center}
+.fl{position:relative;height:60px;margin:0 8px}
+.fl .trk{position:absolute;left:8px;right:40px;top:44px;border-top:6px dashed var(--ink);opacity:.45}
+.fl .st{position:absolute;top:36px;width:20px;height:20px;border-radius:4px;background:var(--paper);border:3px solid var(--ink);margin-left:-10px}.fl .st.on{background:var(--teal)}
+.fl .pl{position:absolute;top:0;transition:left .9s cubic-bezier(.5,1.4,.5,1);margin-left:-30px}
+.fl .fort{position:absolute;right:0;top:4px}
+.nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.nav span{font-weight:800}
+.nav button{border:3px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:10px;padding:5px 14px;font-size:16px;font-weight:700;box-shadow:0 4px 0 var(--ink);transition:transform .15s}
+.nav button:hover{transform:translateY(-2px)}.nav button.on{background:var(--teal);color:#fff;transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.card{background:var(--paper);border:4px solid var(--ink);border-radius:18px;padding:0 clamp(16px,3vw,30px) clamp(16px,3vw,28px);display:flex;flex-direction:column;gap:14px;box-shadow:0 8px 0 #3B2A1A55;animation:pop .45s;overflow:hidden}
+.bar{margin:0 calc(-1*clamp(16px,3vw,30px));padding:8px 18px;background:var(--teal);color:#fff;display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;border-bottom:4px solid var(--ink)}
+.bar i{width:12px;height:12px;border-radius:50%;background:#fff;opacity:.9;display:inline-block}.bar i:nth-child(2){background:var(--gold)}.bar i:nth-child(3){background:var(--terra)}
+.card h2{margin:6px 0 0;font-size:clamp(20px,3vw,28px)}
+.meta{display:flex;justify-content:space-between;font-weight:800;font-size:18px;flex-wrap:wrap;gap:6px;padding-bottom:10px;border-bottom:4px dotted var(--terra)}
+.q{font-size:clamp(22px,3.4vw,32px);font-weight:800;line-height:1.3}.q b{color:#A63A25;background:#FFE3D6;border-radius:8px;padding:0 6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.o{display:flex;align-items:center;justify-content:center;gap:12px;border:3px solid var(--ink);background:#fff;color:var(--ink);border-radius:14px;padding:14px 18px;font-size:clamp(18px,2.6vw,24px);font-weight:700;box-shadow:0 5px 0 var(--ink);transition:transform .12s}
+.grid .o:nth-child(3n+1){border-left:14px solid var(--terra)}.grid .o:nth-child(3n+2){border-left:14px solid var(--gold)}.grid .o:nth-child(3n+3){border-left:14px solid var(--teal)}
+.o:hover:not(:disabled){transform:translateY(-3px);background:#FFF1D6}.o:active:not(:disabled){transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.o.ok{background:#A8EBC4;animation:pop .4s}.o.bad{background:#FFC0B0;animation:shake .4s}.o:disabled{cursor:default}
+.fb{font-size:22px;font-weight:700;min-height:40px;display:flex;align-items:center;gap:10px}
+.seal{display:inline-flex;align-items:center;justify-content:center;min-width:56px;height:56px;border-radius:50%;background:#B8321F;color:#fff;border:4px double #FFD9A0;font-size:15px;font-weight:800;animation:stampin .4s;padding:0 6px;text-align:center;line-height:1}.seal.no{background:#6B5A4A}
+.go{align-self:flex-end;background:var(--ink);color:#fff;border:0;border-radius:12px;padding:12px 32px;font-size:21px;font-weight:800;box-shadow:0 5px 0 #1a1008}
+.go.alt{background:var(--terra);box-shadow:0 5px 0 #8a3322}.go[disabled]{opacity:.35}.go:active{transform:translateY(3px)}
+.row{display:flex;gap:12px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.box{background:#fff;border:3px dashed var(--ink);border-radius:14px;padding:12px 20px;font-size:clamp(18px,2.4vw,22px);line-height:1.8}.box b{color:#A63A25}
+.learn{background:#D7F1EE;border:3px solid var(--ink);border-radius:14px;padding:10px 18px;font-size:19px}
+.cz{display:grid;grid-template-columns:40px repeat(3,1fr);gap:8px;align-items:center}.cz .o{padding:6px 12px;justify-content:flex-start;border-color:transparent;box-shadow:none;background:transparent;border-left-width:3px!important;font-size:clamp(17px,2.2vw,22px)}.cz .o.sel{border-color:var(--ink);background:#fff}
+.cz .o.ok{background:#A8EBC4}.cz .o.bad{background:#FFC0B0}
+.dot{width:26px;height:16px;border:3px solid var(--ink);border-radius:50%;background:#fff;flex:none}.sel .dot{background:var(--ink)}
+.mail{display:flex;flex-direction:column;gap:8px;max-height:430px;overflow:auto;padding-right:6px}
+.mh{background:#fff;border:3px solid var(--ink);border-radius:12px;padding:8px 14px;font-size:17px;line-height:1.5}
+.s{display:block;width:100%;text-align:left;border:3px solid var(--ink);background:#fff;color:var(--ink);border-radius:14px;padding:10px 16px;font-size:clamp(17px,2.2vw,21px);line-height:1.55}.s.sel{background:#FFE9A8}.s b{color:#A63A25;background:#FFE3D6;border-radius:6px;padding:0 4px}
+.wc{border:3px solid var(--ink);background:#fff;color:var(--ink);border-radius:999px;padding:8px 14px;font-size:19px;font-weight:700;box-shadow:0 4px 0 var(--ink)}.wc.ok{background:#A8EBC4}.wc.bad{background:#FFC0B0;animation:shake .4s}
+.tm{font-size:34px;font-weight:800;color:#A63A25;display:flex;align-items:center;gap:8px}
+.bag{background:#fff;border:4px dashed var(--ink);border-radius:20px;padding:12px;min-height:70px;display:flex;flex-wrap:wrap;gap:8px}.bag span{background:#A8EBC4;border:3px solid var(--ink);border-radius:999px;padding:4px 14px;font-weight:700;font-size:18px}
+.credit{text-align:right;font-size:15px;font-weight:700}
+.big-stamp{align-self:center;font-size:clamp(34px,6vw,56px);font-weight:800;color:#A63A25;border:6px double #A63A25;border-radius:16px;padding:0 26px;transform:rotate(-4deg);animation:stampin .5s}
+@keyframes pop{0%{transform:scale(.96);opacity:.4}100%{transform:scale(1);opacity:1}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+@keyframes stampin{0%{transform:scale(2.2) rotate(-14deg);opacity:0}100%{transform:scale(1) rotate(-6deg);opacity:1}}
+</style></head><body>
+<div class="sunb"></div><svg class="dunes" viewBox="0 0 800 230" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><path d="M0 230V150q120-70 240-10t260-20 300 40v70z" fill="#E4A455" opacity=".7"/><path d="M0 230V185q150-60 300-10t300-10 200 20v45z" fill="#C97F3A" opacity=".75"/><g fill="#3B2A1A" opacity=".35"><path d="M560 190v-70h12v-14h8v14h12v-18h8v18h12v-14h8v14h12v70z"/><path d="M80 190v-60M80 130q-30-10-40 10M80 130q30-10 40 10M80 138q-28 4-34 22M80 138q28 4 34 22" stroke="#3B2A1A" stroke-width="5" fill="none"/></g></svg>
+<div class="wrap">
+<div class="top"><div class="tt"><svg width="54" height="42" viewBox="0 0 54 42" aria-hidden="true"><rect x="3" y="5" width="48" height="32" rx="5" fill="#fff" stroke="#3B2A1A" stroke-width="3"/><path d="M4 8l23 18L50 8" fill="none" stroke="#3B2A1A" stroke-width="3" stroke-linejoin="round"/><circle cx="44" cy="10" r="7" fill="#C8553D" stroke="#3B2A1A" stroke-width="2.5"/></svg><div><small>NEW EMAIL · UNIT 3 · TRAVEL · LESSON 8, PART 1</small><h1>School Trip to Bahla</h1></div></div><div style="text-align:right"><span class="badge"><svg width="30" height="22" viewBox="0 0 40 28" aria-hidden="true"><circle cx="10" cy="14" r="8" fill="#FFD04D" stroke="#3B2A1A" stroke-width="3"/><circle cx="10" cy="14" r="2.5" fill="#3B2A1A"/><path d="M18 14h20M32 14v8M26 14v6" fill="none" stroke="#3B2A1A" stroke-width="3.5" stroke-linecap="round"/></svg><span id="stars"></span> Keys</span><br><small style="letter-spacing:0">Trip time: 25 minutes</small></div></div>
+<div class="fl"><div class="trk"></div><div id="stations"></div><span class="pl" id="pl"><svg width="64" height="42" viewBox="0 0 64 42" aria-hidden="true"><rect x="3" y="6" width="58" height="26" rx="8" fill="#0F8A8F" stroke="#3B2A1A" stroke-width="3"/><rect x="9" y="11" width="11" height="9" rx="2" fill="#FFF6D6"/><rect x="24" y="11" width="11" height="9" rx="2" fill="#FFF6D6"/><rect x="39" y="11" width="15" height="9" rx="2" fill="#FFF6D6"/><rect x="6" y="24" width="52" height="4" fill="#E9A400"/><circle cx="17" cy="34" r="6" fill="#3B2A1A"/><circle cx="47" cy="34" r="6" fill="#3B2A1A"/><circle cx="17" cy="34" r="2.5" fill="#FFF6D6"/><circle cx="47" cy="34" r="2.5" fill="#FFF6D6"/></svg></span><span class="fort"><svg width="64" height="54" viewBox="0 0 64 54" aria-hidden="true"><path d="M4 52V20h8v-8h6v8h6V8h6v12h8V8h6v12h6v-8h6v8h8v32z" fill="#C8553D" stroke="#3B2A1A" stroke-width="3" stroke-linejoin="round"/><path d="M26 52V36a6 6 0 0 1 12 0v16z" fill="#3B2A1A"/></svg></span></div>
+<div class="nav" id="nav"></div>
+<div id="main"></div>
+<div class="credit">Created by T.Badria Alfalahi</div>
+</div>
+<script>
+const N=a=>a.map(t=>({t}));
+const YN=N(['Yes','No']);
+const HB=['suitcase','passport','flip-flops','raincoat','umbrella','charger','pillow','land','arrive','explore','take off','catch a bus','homework','football','sandwich','laptop'];
+const HOK=HB.slice(0,12);
+const EM=['Dear students,','We can now send you information about our school trip to Bahla. The trip is next Sunday (16th April). Please arrive at the school at 4 p.m. The roads are very busy then, so don’t be late. The express coach leaves at 4.30 p.m. and we arrive at Bahla at 6.30 p.m.','Our hotel is near the famous Bahla fort. We’re lucky because the hotel has a brand-new swimming pool. Remember to bring your swimsuit and your flip-flops, and you can swim before dinner. Dinner is at 7 p.m. every evening.','On Monday, we visit the famous Bahla fort, which has been a UNESCO World Heritage site since 1987. You need to bring a wallet, with some money to buy a sandwich and a drink. The weather is usually hot in Bahla. Bring your sunhat and light clothes. You must wear trainers or comfortable shoes because we’re going to do a lot of walking.','We’re going to look around the fort. You can see some wonderful views from the walls at the top. We’re also going to look around the town and the souq. Bring enough money to buy a gift if you want.','On Tuesday, after breakfast, pack your suitcase and wait at the hotel entrance. The coach back to Muscat leaves at 9 a.m. and arrives at the school at about 11 a.m.','We’re sure that you will have a lovely time in Bahla and look forward to seeing you soon. Yours, Mr Sultan, head teacher'];
+const VW=['express','busy','lucky','lovely','brand-new','wonderful'];
+const WD=N(['express','busy','lucky']);
+const PK=[['swimsuit',1],['flip-flops',1],['wallet with money',1],['sunhat',1],['light clothes',1],['trainers',1],['winter coat',0],['snow boots',0],['blanket',0],['laptop',0],['pencil case',0],['torch',0]];
+const qt=(w)=>'Do the children need to take a '+w+'?';
+const A=[
+{n:'1 · The ball is burning',min:3,type:'hot'},
+{n:'2 · Before you read',min:2,type:'mc',q:[
+{pr:'Do the children need to take a <b>swimsuit</b>?',o:YN,a:0,ex:'There is a brand-new swimming pool.'},
+{pr:'Do the children need to take a <b>pencil case</b>?',o:YN,a:1,ex:'It isn’t in the email.'},
+{pr:'Do the children need to take a <b>suitcase</b>?',o:YN,a:0,ex:'“Pack your suitcase.”'},
+{pr:'Do the children need to take a <b>laptop</b>?',o:YN,a:1,ex:'It isn’t in the email.'},
+{pr:'Do the children need to take <b>money</b>?',o:YN,a:0,ex:'“Bring a wallet with some money.”'},
+{pr:'Do the children need to take a <b>blanket</b>?',o:YN,a:1,ex:'It isn’t in the email.'},
+{pr:'Do the children need to take <b>flip-flops</b>?',o:YN,a:0,ex:'“Remember to bring your swimsuit and your flip-flops.”'},
+{pr:'Do the children need to take a <b>torch</b>?',o:YN,a:1,ex:'It isn’t in the email.'}]},
+{n:'3 · Listen and read',min:5,type:'email'},
+{n:'4 · Words in context',min:3,type:'mc',q:[
+{pr:'What a ___ photo of your family. Everyone looks so happy.',o:N(['lovely','busy','express']),a:0},
+{pr:'The hospital was very ___. I had to wait an hour to see the doctor.',o:N(['lucky','busy','brand-new']),a:1},
+{pr:'My parents used to have an old car, but now they have a ___ one.',o:N(['brand-new','busy','express']),a:0},
+{pr:'Marwa won first prize at the science fair! That’s ___ news!',o:N(['busy','express','wonderful']),a:2},
+{pr:'Don’t take the regular train. You’ll be late. Take the ___ train.',o:N(['lucky','express','lovely']),a:1},
+{pr:'The weather was cloudy when I visited Al Buraimi in February. I was so ___!',o:N(['lucky','busy','express']),a:0}]},
+{n:'5 · Read and complete',min:4,type:'mc',q:[
+{pr:'On day one, students must be at the school at ___.',o:N(['4.30 p.m.','4 p.m.','6.30 p.m.']),a:1},
+{pr:'The express coach leaves at ___.',o:N(['6.30 p.m.','7 p.m.','4.30 p.m.']),a:2},
+{pr:'The coach arrives at Bahla at ___.',o:N(['6.30 p.m.','4.30 p.m.','4 p.m.']),a:0},
+{pr:'At the hotel, they have dinner at ___.',o:N(['6.30 p.m.','7.00 p.m.','4.30 p.m.']),a:1},
+{pr:'They visit Bahla Fort the ___ day.',o:N(['next','last','first']),a:0},
+{pr:'They must wear trainers because they are ___ to do a lot of walking.',o:N(['going','will','went']),a:0},
+{pr:'After ___ on day three, they must pack their suitcase.',o:N(['dinner','breakfast','lunch']),a:1},
+{pr:'The coach to Muscat ___ at 9 a.m.',o:N(['arrives','leaves','lands']),a:1},
+{pr:'They ___ at the school at about 11 a.m.',o:N(['arrive','leave','pack']),a:0}]},
+{n:'6 · Answer the questions',min:3,type:'mc',q:[
+{pr:'How are the students going to get to Bahla?',o:N(['They are going to take an express coach.','They are going to fly.','They are going to take a train.']),a:0},
+{pr:'Why mustn’t they be late?',o:N(['The hotel is full.','The roads are very busy then.','The fort closes.']),a:1},
+{pr:'What is special about the hotel?',o:N(['It is next to the sea.','It is very old.','It has a brand-new swimming pool.']),a:2},
+{pr:'Why should they take a sunhat?',o:N(['Bahla is in the desert so the weather is usually very hot.','It is going to rain.','It is a school rule.']),a:0},
+{pr:'What can they see from the walls of the fort?',o:N(['A big river.','Wonderful views of the city.','Snow mountains.']),a:1}]},
+{n:'7 · Pack your bag',min:2,type:'pack'},
+{n:'8 · Final task',min:3,type:'cloze'}];
+const CL=7;
+const C={t:'The school trip to {0} (1) is next Sunday. The express coach leaves at {1} (2). The hotel is {2} (3) the famous Bahla fort. Students must wear {3} (4) because they are going to do a lot of walking. They need a {4} (5) because the weather is hot.',o:[['Salalah','Bahla','Nizwa'],['6.30 p.m.','4 p.m.','4.30 p.m.'],['near','far from','inside'],['flip-flops','sandals','trainers'],['raincoat','blanket','sunhat']],a:[1,2,0,2,2]};
+const nst=()=>({i:0,pk:null,sc:0,done:false,ans:{},chk:false,hl:null,started:false,t:40,over:false,pw:{},bag:{},msg:''});
+let S={step:0,st:A.map(nst)},TM=null;
+let ac;function tone(f,d,ty){try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();f.forEach((hz,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.type=ty||'sine';o.frequency.value=hz;const t=ac.currentTime+i*d;g.gain.setValueAtTime(.18,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+d)})}catch(e){}}
+function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.85;speechSynthesis.speak(u)}catch(e){}}
+const GOOD=()=>tone([523,659,784,1047],.1,'triangle'),BAD=()=>tone([220,160],.2,'sawtooth');
+function go(k){tone([523,659],.1);try{speechSynthesis.cancel()}catch(e){}S.step=k;render()}
+function hstart(){const s=S.st[0];clearInterval(TM);Object.assign(s,{started:true,t:40,over:false,pw:{},sc:0});tone([392,523,659],.1);TM=setInterval(()=>{s.t--;if(s.t<=0){clearInterval(TM);s.over=true;tone([523,659,784,1047],.14,'triangle')}render()},1000);render()}
+function hp(w){const s=S.st[0];if(!s.started||s.over||s.pw[w])return;if(HOK.includes(w)){s.pw[w]=1;s.sc++;GOOD();say(w)}else{s.pw[w]=-1;BAD()}render()}
+function line(i){S.st[2].hl=i;say(EM[i]);render()}
+function play(){try{speechSynthesis.cancel();EM.forEach((t,i)=>{const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.9;u.onstart=()=>{S.st[2].hl=i;render()};speechSynthesis.speak(u)})}catch(e){}}
+function pick(i){const s=S.st[S.step],q=A[S.step].q[s.i];if(s.pk!==null)return;s.pk=i;if(i===q.a){s.sc++;GOOD()}else BAD();render()}
+function nxt(){const s=S.st[S.step],a=A[S.step];if(s.pk===null)return;if(s.i+1<a.q.length){s.i++;s.pk=null}else{s.done=true;tone([523,659,784,1047],.14,'triangle')}render()}
+function retry(){clearInterval(TM);S.st[S.step]=nst();tone([440,523],.1);render()}
+function pk(i){const s=S.st[6];if(s.bag[i]!==undefined)return;if(PK[i][1]){s.bag[i]=1;s.sc++;GOOD();s.msg='Good! Pack the '+PK[i][0]+'.'}else{s.bag[i]=0;BAD();s.msg='No! You don’t need a '+PK[i][0]+' in Bahla.'}render()}
+function cl(g,i){const s=S.st[CL];if(s.chk)return;s.ans[g]=i;tone([660],.08);render()}
+function chk(){const s=S.st[CL];if(Object.keys(s.ans).length<5){tone([220],.15,'square');return}s.chk=true;const n=C.a.filter((a,g)=>s.ans[g]===a).length;tone(n>=4?[523,659,784,1047]:[392,330,262],.14,'triangle');render()}
+function stars(){const s=S.st;return s.slice(0,CL).reduce((x,y)=>x+y.sc,0)+(s[CL].chk?C.a.filter((a,g)=>s[CL].ans[g]===a).length:0)}
+const bar=t=>'<div class="bar"><i></i><i></i><i></i><span>Inbox · '+t+'</span></div>';
+function mc(a,s){
+ const q=a.q[s.i],n=a.q.length,lk=s.pk!==null,ok=lk&&s.pk===q.a;
+ if(s.done)return '<div class="card">'+bar(a.n)+'<div class="big-stamp">'+s.sc+' / '+n+'</div><div class="fb" style="justify-content:center">'+(s.sc===n?'Excellent! Wonderful work!':s.sc>=n-1?'Well done!':'Good try! Play again.')+'</div><div class="row"><button class="go alt" onclick="retry()">Play again</button>'+(S.step<CL?'<button class="go" onclick="go('+(S.step+1)+')">Next stop →</button>':'')+'</div></div>';
+ const pr=q.pr.replace('___',lk?'<b>'+q.o[q.a].t+'</b>':'______');
+ return '<div class="card">'+bar(a.n+' · '+a.min+' min')+'<div class="meta"><span>Question '+(s.i+1)+' / '+n+'</span><span>Keys: '+s.sc+'</span></div><div class="q">'+pr+'</div><div class="grid">'+q.o.map((o,i)=>'<button class="o'+(lk&&i===q.a?' ok':lk&&i===s.pk?' bad':'')+'" '+(lk?'disabled':'')+' onclick="pick('+i+')"><span>'+o.t+'</span></button>').join('')+'</div><div class="fb">'+(lk?'<span class="seal'+(ok?'':' no')+'">'+(ok?'GREAT!':'TRY<br>AGAIN')+'</span><span>The answer is: '+q.o[q.a].t+'. '+(q.ex||'')+'</span>':'Choose the correct answer.')+'</div><button class="go" onclick="nxt()" '+(lk?'':'disabled')+'>'+(s.i+1===n?'Finish':'Next →')+'</button></div>'}
+function view(){
+ const a=A[S.step],s=S.st[S.step];
+ if(a.type==='mc')return mc(a,s);
+ if(a.type==='hot'){const ch=HB.map(w=>{const v=s.pw[w];return '<button class="wc'+(v===1?' ok':v===-1?' bad':'')+'" onclick="hp(\''+w+'\')">'+w+'</button>'}).join('');return '<div class="card">'+bar(a.n+' · '+a.min+' min')+'<div class="meta"><span>Hot ball! Tap words from Holiday equipment and Transport verbs</span><span class="tm">'+(s.started?s.t:'40')+' s</span></div><div class="learn">The ball is burning! Tap the words from this unit before the time is up. Careful: some words are not from the unit!</div><div class="row" style="justify-content:flex-start">'+ch+'</div><div class="fb">'+(s.over?'Time’s up! You found '+s.sc+' / 12 words.':s.started?'Found: '+s.sc+' / 12':'')+'</div><div class="row">'+(s.started&&!s.over?'':'<button class="go alt" onclick="hstart()">'+(s.over?'Play again':'Start the 40 seconds')+'</button>')+'<button class="go" onclick="go(1)">Before you read →</button></div></div>'}
+ if(a.type==='email'){const hi=t=>VW.reduce((x,w)=>x.replace(new RegExp('\\b'+w+'\\b','gi'),m=>'<b>'+m+'</b>'),t);return '<div class="card">'+bar(a.n+' · '+a.min+' min')+'<div class="learn"><b>Reading tip:</b> You don’t have to look up every word! Not every word is important. Words in context: '+VW.map(w=>'<b>'+w+'</b>').join(' · ')+'</div><div class="mh"><b>To:</b> Grade 7 students<br><b>Subject:</b> School trip to Bahla</div><div class="row" style="justify-content:flex-start"><button class="go alt" style="padding:8px 24px;font-size:18px" onclick="play()">▶ Listen to the email</button></div><div class="mail">'+EM.map((t,i)=>'<button class="s'+(s.hl===i?' sel':'')+'" onclick="line('+i+')">'+hi(t)+'</button>').join('')+'</div><button class="go" onclick="go(3)">Words in context →</button></div>'}
+ if(a.type==='pack'){const bag=PK.filter((p,i)=>s.bag[i]===1).map(p=>'<span>'+p[0]+'</span>').join('');return '<div class="card">'+bar(a.n+' · '+a.min+' min')+'<div class="learn">What do you need for the school trip to Bahla? Tap an item to put it in your bag. Pack all <b>6</b> things you need!</div><div class="row" style="justify-content:flex-start">'+PK.map((p,i)=>'<button class="wc'+(s.bag[i]===1?' ok':s.bag[i]===0?' bad':'')+'" onclick="pk('+i+')">'+p[0]+'</button>').join('')+'</div><div class="fb">'+s.msg+'</div><div class="bag" aria-label="My bag">'+(bag||'<em>My bag is empty</em>')+'</div><div class="fb">'+(s.sc===6?'Your bag is ready for Bahla! You are a wonderful packer!':'Packed: '+s.sc+' / 6')+'</div><div class="row"><button class="go alt" onclick="retry()">Start again</button><button class="go" onclick="go(7)">Final task →</button></div></div>'}
+ const g=i=>'<b>'+(s.ans[i]===undefined?'______':C.o[i][s.ans[i]])+'</b>',n=C.a.filter((x,i)=>s.ans[i]===x).length;
+ return '<div class="card">'+bar('Finishing the lesson · Reading')+'<div class="meta"><span>Reading an email</span><b>(5 marks)</b></div><div style="font-style:italic;font-size:18px">For each item, shade in the bubble next to the correct option.</div><div class="box">'+C.t.replace(/\{(\d)\}/g,(m,i)=>g(+i))+'</div>'+C.o.map((os,gi)=>'<div class="cz"><b>'+(gi+1)+')</b>'+os.map((w,i)=>{const sel=s.ans[gi]===i,cls=s.chk&&i===C.a[gi]?' ok':s.chk&&sel?' bad':'';return '<button class="o'+(sel?' sel':'')+cls+'" onclick="cl('+gi+','+i+')"><span class="dot"></span>'+w+'</button>'}).join('')+'</div>').join('')+(s.chk?'<div class="big-stamp">'+n+' / 5</div>':'')+'<div class="row"><span style="margin-right:auto;font-size:20px;font-weight:700">'+(s.chk?(n===5?'Excellent! Wonderful reading!':'Review: '+C.a.map((x,i)=>s.ans[i]!==x?C.o[i][x]:null).filter(Boolean).join(', ')):'Answer all 5 items, then press Check.')+'</span><button class="go alt" onclick="chk()">Check</button><button class="go" onclick="retry()">Try again</button></div><div class="credit">Created by T.Badria Alfalahi</div></div>'}
+function render(){
+ const L=A.length-1;
+ document.getElementById('nav').innerHTML='<span>Choose your stop:</span>'+A.map((a,k)=>'<button class="'+(k===S.step?'on':'')+'" onclick="go('+k+')">'+a.n+'</button>').join('');
+ document.getElementById('stars').textContent=stars();
+ document.getElementById('pl').style.left=(S.step/L*(100)-0)+'%';
+ document.getElementById('stations').innerHTML=A.map((a,k)=>'<span class="st'+(k<=S.step?' on':'')+'" style="left:'+(k/L*100)+'%"></span>').join('');
+ document.getElementById('main').innerHTML=view()}
+render();
+</script></body></html>
